@@ -10,13 +10,14 @@ import {
 export class DSInput {
   @Prop() value: string;
 
-  @Event() changeValue: EventEmitter;
+  @Event() changed: EventEmitter;
 
-  handleChange = (e: Event): void => {
-    this.changeValue.emit((e.target as HTMLInputElement).value);
+  private handleChange = (e: Event): void => {
+    this.value = (e.target as HTMLInputElement)?.value;
+    this.changed.emit(e);
   }
 
   render(): Element {
-    return <input value={this.value} onChange={this.handleChange} />;
+    return <input value={this.value} onInput={this.handleChange} />;
   }
 }

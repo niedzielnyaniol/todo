@@ -55,7 +55,7 @@ declare namespace LocalJSX {
     interface DsButton {
     }
     interface DsInput {
-        "onChangeValue"?: (event: CustomEvent<any>) => void;
+        "onChanged"?: (event: CustomEvent<any>) => void;
         "value"?: string;
     }
     interface MyComponent {
