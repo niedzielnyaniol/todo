@@ -1,4 +1,6 @@
-import { Component, Prop, h, EventEmitter, Event } from '@stencil/core';
+import {
+  Component, Prop, h, EventEmitter, Event,
+} from '@stencil/core';
 
 @Component({
   tag: 'ds-input',
@@ -10,11 +12,11 @@ export class DSInput {
 
   @Event() changeValue: EventEmitter;
 
-  handleChange = (e: Event) => {
+  handleChange = (e: Event): void => {
     this.changeValue.emit((e.target as HTMLInputElement).value);
   }
 
-  render() {
-    return <input value={this.value} onChange={this.handleChange}/>
-  };
+  render(): Element {
+    return <input value={this.value} onChange={this.handleChange} />;
+  }
 }

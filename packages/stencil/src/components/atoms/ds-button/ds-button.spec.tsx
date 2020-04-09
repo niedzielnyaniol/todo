@@ -5,7 +5,7 @@ describe('ds-button', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [DsButton],
-      html: `<ds-button></ds-button>`,
+      html: '<ds-button></ds-button>',
     });
     expect(page.root).toEqualHtml(`
       <ds-button>

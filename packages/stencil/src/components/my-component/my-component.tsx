@@ -3,7 +3,7 @@ import { Component, Prop, h } from '@stencil/core';
 @Component({
   tag: 'my-component',
   styleUrl: 'my-component.css',
-  shadow: true
+  shadow: true,
 })
 export class MyComponent {
   /**
@@ -25,7 +25,7 @@ export class MyComponent {
     return this.first + this.middle + this.last;
   }
 
-  render() {
-    return <div>Hello ! I"m {this.getText()}</div>;
+  render(): Element {
+    return <div>Hello ! Im {this.getText()}</div>;
   }
 }

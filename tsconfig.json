@@ -1,0 +1,44 @@
+{
+    "compilerOptions": {
+        "resolveJsonModule": true,
+        "baseUrl": ".",
+        "outDir": "dist",
+        "locale": "pl",
+        "module": "commonjs",
+        "target": "es5",
+        "lib": [
+            "es6",
+            "es2017",
+            "dom"
+        ],
+        "sourceMap": true,
+        "declaration": true,
+        "jsx": "react",
+        "moduleResolution": "node",
+        "rootDirs": ["src"],
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noImplicitAny": false,
+        "strictNullChecks": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "downlevelIteration": true,
+        "noUnusedLocals": false,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "skipLibCheck": true
+    },
+    "include": [
+      "packages/"
+    ],
+    "exclude": [
+        "dist",
+        "node_modules",
+        "**/*.stories.*",
+        "**/*.test.*",
+        "**/*.spec.*",
+        "**/*.e2e.*"
+    ]
+}

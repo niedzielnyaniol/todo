@@ -1,4 +1,6 @@
-import { Component, ComponentInterface, Host, h } from '@stencil/core';
+import {
+  Component, ComponentInterface, Host, h,
+} from '@stencil/core';
 
 @Component({
   tag: 'ds-button',
@@ -6,13 +8,11 @@ import { Component, ComponentInterface, Host, h } from '@stencil/core';
   shadow: true,
 })
 export class DsButton implements ComponentInterface {
-
-  render() {
+  render(): Element {
     return (
       <Host>
-        <slot></slot>
+        <slot />
       </Host>
     );
   }
-
 }
