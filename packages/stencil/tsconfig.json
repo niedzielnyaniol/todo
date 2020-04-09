@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@atoms/*": ["./src/components/atoms/*"]
+    },
     "allowUnreachableCode": false,
     "declaration": false,
     "experimentalDecorators": true,
@@ -23,5 +27,5 @@
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
 }

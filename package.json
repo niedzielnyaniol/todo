@@ -1,0 +1,29 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "Simple todo app",
+  "devDependencies": {
+    "eslint": "6.8.0",
+    "eslint-config-airbnb": "18.1.0",
+    "eslint-config-prettier": "6.10.1",
+    "eslint-plugin-import": "2.20.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react": "7.19.0",
+    "eslint-plugin-react-hooks": "3.0.0",
+    "lerna": "3.20.2"
+  },
+  "scripts": {
+    "test": "test",
+    "lint": "eslint ./packages/ --ext .js,.jsx,.ts,.tsx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niedzielnyaniol/todo.git"
+  },
+  "author": "niedzielnyaniol",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/niedzielnyaniol/todo/issues"
+  },
+  "homepage": "https://github.com/niedzielnyaniol/todo#readme"
+}

@@ -1,0 +1,25 @@
+{
+  "packages": [
+    "packages/**"
+  ],
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "version": "independent",
+  "command": {
+    "publish": {
+      "conventionalCommits": true
+    },
+    "version": {
+      "push": false,
+      "message": "chore(release): publish"
+    }
+  },
+  "changelog": {
+    "labels": {
+      "feat": ":rocket: New Feature",
+      "fix": ":bug: Bug Fix",
+      "refactor": ":hammer_and_wrench: Refactor",
+      "version": ":tada: New Version"
+    }
+  }
+}
