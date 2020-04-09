@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "build": "stencil build --docs",
-    "start": "stencil build --dev --watch --serve",
+    "start": "stencil build --dev --watch",
     "test": "stencil test --spec --e2e",
     "test:watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
@@ -28,6 +28,7 @@
     "@stencil/core": "^1.12.2",
     "@storybook/addon-notes": "^5.3.18",
     "@storybook/html": "^5.3.18",
+    "@types/jest": "^25.2.1",
     "babel-loader": "^8.1.0",
     "copy-webpack-plugin": "^5.1.1",
     "write-file-webpack-plugin": "^4.5.1"
