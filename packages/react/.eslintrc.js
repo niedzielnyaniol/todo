@@ -9,6 +9,8 @@ module.exports = {
   ],
   extends: [
     '../../.eslintrc.js',
+    'airbnb',
+    'airbnb/hooks',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:import/errors',
@@ -16,13 +18,13 @@ module.exports = {
     'plugin:import/typescript',
   ],
   rules: {
-    'class-methods-use-this': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/no-unused-vars': ['error', { 'varsIgnorePattern': 'h' }],
     '@typescript-eslint/no-empty-function': 'off',
     '@typescript-eslint/explicit-function-return-type': ['error'],
-    'import/prefer-default-export': 'off',
+    'react/prop-types': 'off',
+    'react/jsx-filename-extension': [1, { 'extensions': ['.tsx'] }],
+    'react/jsx-one-expression-per-line': 'off',
     'import/no-extraneous-dependencies': 'off',
+    'import/prefer-default-export': 'off',
     'import/extensions': [
       'error',
       'ignorePackages',
@@ -37,13 +39,5 @@ module.exports = {
       'error',
       { 'ignore': ['^react$', '^styled-components$'] }
     ]
-  },
-  overrides: [
-    {
-      files: ['*.ts', '*.tsx'],
-      rules: {
-        '@typescript-eslint/explicit-function-return-type': ['error']
-      }
-    }
-  ]
+  }
 };
