@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import { applyPolyfills, defineCustomElements } from '@todo/design-system/loader';
-import App from './App';
+import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 
 declare global {
