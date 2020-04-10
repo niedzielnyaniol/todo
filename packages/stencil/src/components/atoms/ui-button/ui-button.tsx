@@ -1,5 +1,5 @@
 import {
-  Component, ComponentInterface, h, Prop,
+  Component, ComponentInterface, h, Prop, EventEmitter, Event,
 } from '@stencil/core';
 
 @Component({
@@ -8,11 +8,17 @@ import {
   shadow: true,
 })
 export class UiButton implements ComponentInterface {
-  @Prop({ mutable: true }) type?: 'button' | 'submit' | 'reset' = 'button';
+  @Prop() type?: 'button' | 'submit' | 'reset' = 'button';
+
+  @Event() clicked: EventEmitter;
+
+  private handleClick = (e: Event): void => {
+    this.clicked.emit(e);
+  }
 
   render(): Element {
     return (
-      <button type={this.type}>
+      <button type={this.type} onClick={this.handleClick}>
         <slot />
       </button>
     );

@@ -18,3 +18,15 @@ export const withValue = () => `
 export const withPlaceholder = () => `
   <ui-input placeholder="default placeholder"></ui-input>
 `;
+
+export const withButton = () => `
+  <ui-input>
+    <icon-plus slot="button"></icon-plus>
+  </ui-input>
+`;
+
+export const enterTodo = () => `
+  <ui-input placeholder="Enter todo">
+    <icon-plus slot="button"></icon-plus>
+  </ui-input>
+`;

@@ -45,9 +45,11 @@ declare namespace LocalJSX {
     interface IconPlus {
     }
     interface UiButton {
+        "onClicked"?: (event: CustomEvent<any>) => void;
         "type"?: "button" | "submit" | "reset";
     }
     interface UiInput {
+        "onAccept"?: (event: CustomEvent<any>) => void;
         "onChanged"?: (event: CustomEvent<any>) => void;
         "placeholder"?: string;
         "value"?: string;
