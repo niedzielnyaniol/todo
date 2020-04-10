@@ -1,0 +1,12 @@
+:host {
+  display: block;
+}
+
+button {
+  display: block;
+  height: 40px;
+  padding: 0 7px;
+  cursor: pointer;
+  border: none;
+  background: var(--app-tertiary-color);
+}

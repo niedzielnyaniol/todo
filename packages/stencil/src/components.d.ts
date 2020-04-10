@@ -6,85 +6,65 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface DsButton {
+    interface IconPlus {
     }
-    interface DsInput {
+    interface UiButton {
+        "type"?: "button" | "submit" | "reset";
+    }
+    interface UiInput {
+        "placeholder"?: string;
         "value": string;
-    }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
     }
 }
 declare global {
-    interface HTMLDsButtonElement extends Components.DsButton, HTMLStencilElement {
+    interface HTMLIconPlusElement extends Components.IconPlus, HTMLStencilElement {
     }
-    var HTMLDsButtonElement: {
-        prototype: HTMLDsButtonElement;
-        new (): HTMLDsButtonElement;
+    var HTMLIconPlusElement: {
+        prototype: HTMLIconPlusElement;
+        new (): HTMLIconPlusElement;
     };
-    interface HTMLDsInputElement extends Components.DsInput, HTMLStencilElement {
+    interface HTMLUiButtonElement extends Components.UiButton, HTMLStencilElement {
     }
-    var HTMLDsInputElement: {
-        prototype: HTMLDsInputElement;
-        new (): HTMLDsInputElement;
+    var HTMLUiButtonElement: {
+        prototype: HTMLUiButtonElement;
+        new (): HTMLUiButtonElement;
     };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLUiInputElement extends Components.UiInput, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLUiInputElement: {
+        prototype: HTMLUiInputElement;
+        new (): HTMLUiInputElement;
     };
     interface HTMLElementTagNameMap {
-        "ds-button": HTMLDsButtonElement;
-        "ds-input": HTMLDsInputElement;
-        "my-component": HTMLMyComponentElement;
+        "icon-plus": HTMLIconPlusElement;
+        "ui-button": HTMLUiButtonElement;
+        "ui-input": HTMLUiInputElement;
     }
 }
 declare namespace LocalJSX {
-    interface DsButton {
+    interface IconPlus {
     }
-    interface DsInput {
+    interface UiButton {
+        "type"?: "button" | "submit" | "reset";
+    }
+    interface UiInput {
         "onChanged"?: (event: CustomEvent<any>) => void;
+        "placeholder"?: string;
         "value"?: string;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
     interface IntrinsicElements {
-        "ds-button": DsButton;
-        "ds-input": DsInput;
-        "my-component": MyComponent;
+        "icon-plus": IconPlus;
+        "ui-button": UiButton;
+        "ui-input": UiInput;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ds-button": LocalJSX.DsButton & JSXBase.HTMLAttributes<HTMLDsButtonElement>;
-            "ds-input": LocalJSX.DsInput & JSXBase.HTMLAttributes<HTMLDsInputElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "icon-plus": LocalJSX.IconPlus & JSXBase.HTMLAttributes<HTMLIconPlusElement>;
+            "ui-button": LocalJSX.UiButton & JSXBase.HTMLAttributes<HTMLUiButtonElement>;
+            "ui-input": LocalJSX.UiInput & JSXBase.HTMLAttributes<HTMLUiInputElement>;
         }
     }
 }

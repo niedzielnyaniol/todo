@@ -1,13 +1,12 @@
-// my-component.stories.js
 import markdown from './readme.md';
 
 export default {
-  title: 'DS-Input',
+  title: 'atoms/icons/ICON-Plus',
   parameters: {
     notes: { markdown },
   },
 };
 
 export const Default = () => `
-  <ds-input></ds-input>
+  <icon-plus></icon-plus>
 `;

@@ -1,0 +1,32 @@
+:host {
+  display: block;
+}
+
+i {
+  position: relative;
+  display: block;
+  width: 28px;
+  height: 28px;
+  background-color: var(--app-secondary-color);
+  border-radius: 50%;
+}
+
+i::before, i::after {
+  content: '';
+  display: block;
+  background-color: var(--border-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+i::before {
+  width: 15px;
+  height: 4px;
+}
+
+i::after {
+  width: 4px;
+  height: 15px;
+}

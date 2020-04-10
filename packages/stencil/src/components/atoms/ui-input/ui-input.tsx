@@ -3,12 +3,14 @@ import {
 } from '@stencil/core';
 
 @Component({
-  tag: 'ds-input',
-  styleUrl: 'ds-input.css',
+  tag: 'ui-input',
+  styleUrl: 'ui-input.css',
   shadow: true,
 })
 export class DSInput {
   @Prop() value: string;
+
+  @Prop() placeholder?: string;
 
   @Event() changed: EventEmitter;
 
@@ -18,6 +20,6 @@ export class DSInput {
   }
 
   render(): Element {
-    return <input value={this.value} onInput={this.handleChange} />;
+    return <input value={this.value} onInput={this.handleChange} placeholder={this.placeholder} />;
   }
 }
