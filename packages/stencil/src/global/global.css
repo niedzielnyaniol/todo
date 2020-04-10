@@ -2,7 +2,10 @@
   --app-primary-color: #fbb;
   --app-secondary-color: #495057;
   --app-tertiary-color: #e9ecef;
+  --app-error-color: #df4751;
+  --app-success-color: #2ba648;
   --border-color: #e2e6e9;
+  --transition-time: .3s;
 }
 
 html, body, div, span, applet, object, iframe,

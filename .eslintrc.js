@@ -22,6 +22,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     '@typescript-eslint/no-empty-function': 'off',
     'react/prop-types': 'off',
+    'no-plusplus': 'off',
     'import/no-extraneous-dependencies': 'off',
     'react/jsx-filename-extension': [1, { 'extensions': ['.tsx'] }],
     'react/jsx-one-expression-per-line': 'off',

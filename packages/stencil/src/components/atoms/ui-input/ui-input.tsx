@@ -12,9 +12,13 @@ export class DSInput implements ComponentInterface {
 
   @Prop() placeholder?: string;
 
-  @Event() changed: EventEmitter;
+  @Event({
+    eventName: 'input-changed',
+  }) changed: EventEmitter;
 
-  @Event() accept: EventEmitter;
+  @Event({
+    eventName: 'input-accept',
+  }) accept: EventEmitter;
 
   @Element() el: HTMLElement;
 
@@ -33,7 +37,7 @@ export class DSInput implements ComponentInterface {
     this.accept.emit(e);
   }
 
-  @Listen('clicked')
+  @Listen('button-clicked')
   handleClick(e: Event): void {
     this.handleAccept(e);
   }

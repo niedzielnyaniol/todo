@@ -1,0 +1,45 @@
+:host {
+  display: block;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+label {
+  display: flex;
+  cursor: pointer;
+}
+
+span {
+  position: relative;
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--app-secondary-color);
+  transition: border var(--transition-time);
+}
+
+span::after {
+  content: '';
+  position: absolute;
+  opacity: 0;
+  top: 40%;
+  left: 50%;
+  display: block;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 7px;
+  height: 4px;
+  border-left: 2px solid var(--app-success-color);
+  border-bottom: 2px solid var(--app-success-color);
+  transition: opacity var(--transition-time);
+}
+
+input[type="checkbox"]:checked ~ span {
+  border-color: var(--app-success-color);
+}
+
+input[type="checkbox"]:checked ~ span::after {
+  opacity: 1;
+}

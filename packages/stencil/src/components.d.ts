@@ -11,9 +11,14 @@ export namespace Components {
     interface UiButton {
         "type"?: "button" | "submit" | "reset";
     }
+    interface UiCheckbox {
+        "checked"?: boolean;
+    }
     interface UiInput {
         "placeholder"?: string;
         "value": string;
+    }
+    interface UiListItem {
     }
 }
 declare global {
@@ -29,35 +34,57 @@ declare global {
         prototype: HTMLUiButtonElement;
         new (): HTMLUiButtonElement;
     };
+    interface HTMLUiCheckboxElement extends Components.UiCheckbox, HTMLStencilElement {
+    }
+    var HTMLUiCheckboxElement: {
+        prototype: HTMLUiCheckboxElement;
+        new (): HTMLUiCheckboxElement;
+    };
     interface HTMLUiInputElement extends Components.UiInput, HTMLStencilElement {
     }
     var HTMLUiInputElement: {
         prototype: HTMLUiInputElement;
         new (): HTMLUiInputElement;
     };
+    interface HTMLUiListItemElement extends Components.UiListItem, HTMLStencilElement {
+    }
+    var HTMLUiListItemElement: {
+        prototype: HTMLUiListItemElement;
+        new (): HTMLUiListItemElement;
+    };
     interface HTMLElementTagNameMap {
         "icon-plus": HTMLIconPlusElement;
         "ui-button": HTMLUiButtonElement;
+        "ui-checkbox": HTMLUiCheckboxElement;
         "ui-input": HTMLUiInputElement;
+        "ui-list-item": HTMLUiListItemElement;
     }
 }
 declare namespace LocalJSX {
     interface IconPlus {
     }
     interface UiButton {
-        "onClicked"?: (event: CustomEvent<any>) => void;
+        "onButton-clicked"?: (event: CustomEvent<any>) => void;
         "type"?: "button" | "submit" | "reset";
     }
+    interface UiCheckbox {
+        "checked"?: boolean;
+        "onCheckbox-change"?: (event: CustomEvent<any>) => void;
+    }
     interface UiInput {
-        "onAccept"?: (event: CustomEvent<any>) => void;
-        "onChanged"?: (event: CustomEvent<any>) => void;
+        "onInput-accept"?: (event: CustomEvent<any>) => void;
+        "onInput-changed"?: (event: CustomEvent<any>) => void;
         "placeholder"?: string;
         "value"?: string;
+    }
+    interface UiListItem {
     }
     interface IntrinsicElements {
         "icon-plus": IconPlus;
         "ui-button": UiButton;
+        "ui-checkbox": UiCheckbox;
         "ui-input": UiInput;
+        "ui-list-item": UiListItem;
     }
 }
 export { LocalJSX as JSX };
@@ -66,7 +93,9 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "icon-plus": LocalJSX.IconPlus & JSXBase.HTMLAttributes<HTMLIconPlusElement>;
             "ui-button": LocalJSX.UiButton & JSXBase.HTMLAttributes<HTMLUiButtonElement>;
+            "ui-checkbox": LocalJSX.UiCheckbox & JSXBase.HTMLAttributes<HTMLUiCheckboxElement>;
             "ui-input": LocalJSX.UiInput & JSXBase.HTMLAttributes<HTMLUiInputElement>;
+            "ui-list-item": LocalJSX.UiListItem & JSXBase.HTMLAttributes<HTMLUiListItemElement>;
         }
     }
 }

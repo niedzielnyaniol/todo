@@ -15,10 +15,10 @@
 
 ## Events
 
-| Event     | Description | Type               |
-| --------- | ----------- | ------------------ |
-| `accept`  |             | `CustomEvent<any>` |
-| `changed` |             | `CustomEvent<any>` |
+| Event           | Description | Type               |
+| --------------- | ----------- | ------------------ |
+| `input-accept`  |             | `CustomEvent<any>` |
+| `input-changed` |             | `CustomEvent<any>` |
 
 
 ## Dependencies

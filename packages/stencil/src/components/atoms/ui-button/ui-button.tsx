@@ -10,7 +10,9 @@ import {
 export class UiButton implements ComponentInterface {
   @Prop() type?: 'button' | 'submit' | 'reset' = 'button';
 
-  @Event() clicked: EventEmitter;
+  @Event({
+    eventName: 'button-clicked',
+  }) clicked: EventEmitter;
 
   private handleClick = (e: Event): void => {
     this.clicked.emit(e);
