@@ -1,3 +1,28 @@
 :host {
   display: block;
 }
+
+.wrapper {
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 20px;
+}
+
+.wrapper.last {
+  border-bottom: none;
+}
+
+.name {
+  width: 100%;
+  padding: 10px;
+}
+
+.button-wrapper {
+  display: flex;
+}
+
+.name-wrapper {
+  cursor: pointer;
+}

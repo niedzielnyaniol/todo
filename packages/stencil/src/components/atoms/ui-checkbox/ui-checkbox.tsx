@@ -14,6 +14,8 @@ export class UiCheckbox implements ComponentInterface {
 
   @Prop() checked?: boolean = false;
 
+  @Prop() disabled?: boolean = false;
+
   @Event({
     eventName: 'checkbox-change',
   }) change: EventEmitter;
@@ -25,7 +27,13 @@ export class UiCheckbox implements ComponentInterface {
   render(): Element {
     return (
       <label htmlFor={this.checkboxId}>
-        <input checked={this.checked} id={this.checkboxId} type="checkbox" onChange={this.handleChange} />
+        <input
+          checked={this.checked}
+          id={this.checkboxId}
+          type="checkbox"
+          onChange={this.handleChange}
+          disabled={this.disabled}
+        />
         <span />
         <slot />
       </label>

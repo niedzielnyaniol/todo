@@ -5,7 +5,9 @@ module.exports = {
     "@typescript-eslint/explicit-function-return-type": "off",
     '@typescript-eslint/no-unused-vars': ["error", { "varsIgnorePattern": "h" }],
     'react/button-has-type': 'off',
-    'react/no-unknown-property': 'off'
+    'react/no-unknown-property': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off'
   },
   "overrides": [
     {

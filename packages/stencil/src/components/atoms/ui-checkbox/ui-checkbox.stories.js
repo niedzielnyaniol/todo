@@ -15,3 +15,11 @@ export const checked = () => `
   <ui-checkbox checked="true"></ui-checkbox>
 `;
 
+export const disabled = () => `
+  <ui-checkbox disabled="true"></ui-checkbox>
+`;
+
+export const disabledChecked = () => `
+  <ui-checkbox disabled="true" checked="true"></ui-checkbox>
+`;
+

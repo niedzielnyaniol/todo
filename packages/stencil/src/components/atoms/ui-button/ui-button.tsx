@@ -1,6 +1,7 @@
 import {
   Component, ComponentInterface, h, Prop, EventEmitter, Event,
 } from '@stencil/core';
+import classNames from '../../../utils/classNames';
 
 @Component({
   tag: 'ui-button',
@@ -9,6 +10,12 @@ import {
 })
 export class UiButton implements ComponentInterface {
   @Prop() type?: 'button' | 'submit' | 'reset' = 'button';
+
+  @Prop() link?: boolean = false;
+
+  @Prop() wide?: boolean = false;
+
+  @Prop() toLeft?: boolean = false;
 
   @Event({
     eventName: 'button-clicked',
@@ -19,8 +26,14 @@ export class UiButton implements ComponentInterface {
   }
 
   render(): Element {
+    const classes = classNames([
+      this.link && 'link',
+      this.wide && 'wide',
+      this.toLeft && 'to-left',
+    ]);
+
     return (
-      <button type={this.type} onClick={this.handleClick}>
+      <button type={this.type} onClick={this.handleClick} class={classes}>
         <slot />
       </button>
     );

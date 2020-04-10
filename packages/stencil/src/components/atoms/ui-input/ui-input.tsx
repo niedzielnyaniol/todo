@@ -33,19 +33,19 @@ export class DSInput implements ComponentInterface {
     this.changed.emit(e);
   }
 
-  private handleAccept = (e: Event): void => {
-    this.accept.emit(e);
+  private handleAccept = (): void => {
+    this.accept.emit(this.value);
   }
 
   @Listen('button-clicked')
-  handleClick(e: Event): void {
-    this.handleAccept(e);
+  handleClick(): void {
+    this.handleAccept();
   }
 
   @Listen('keyup')
   handleEnter(e: Event): void {
     if ((e as KeyboardEvent).keyCode === 13) {
-      this.handleAccept(e);
+      this.handleAccept();
     }
   }
 

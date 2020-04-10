@@ -18,7 +18,6 @@ span {
   height: 14px;
   border-radius: 50%;
   border: 2px solid var(--app-secondary-color);
-  transition: border var(--transition-time);
 }
 
 span::after {
@@ -42,4 +41,9 @@ input[type="checkbox"]:checked ~ span {
 
 input[type="checkbox"]:checked ~ span::after {
   opacity: 1;
+}
+
+input[type="checkbox"]:disabled ~ span {
+  cursor: auto;
+  opacity: .5;
 }

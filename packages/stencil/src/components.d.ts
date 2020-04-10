@@ -6,27 +6,58 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface IconBin {
+    }
+    interface IconMark {
+    }
     interface IconPlus {
     }
+    interface IconX {
+    }
     interface UiButton {
+        "link"?: boolean;
+        "toLeft"?: boolean;
         "type"?: "button" | "submit" | "reset";
+        "wide"?: boolean;
     }
     interface UiCheckbox {
         "checked"?: boolean;
+        "disabled"?: boolean;
     }
     interface UiInput {
         "placeholder"?: string;
         "value": string;
     }
     interface UiListItem {
+        "done": boolean;
+        "last"?: boolean;
+        "name": string;
     }
 }
 declare global {
+    interface HTMLIconBinElement extends Components.IconBin, HTMLStencilElement {
+    }
+    var HTMLIconBinElement: {
+        prototype: HTMLIconBinElement;
+        new (): HTMLIconBinElement;
+    };
+    interface HTMLIconMarkElement extends Components.IconMark, HTMLStencilElement {
+    }
+    var HTMLIconMarkElement: {
+        prototype: HTMLIconMarkElement;
+        new (): HTMLIconMarkElement;
+    };
     interface HTMLIconPlusElement extends Components.IconPlus, HTMLStencilElement {
     }
     var HTMLIconPlusElement: {
         prototype: HTMLIconPlusElement;
         new (): HTMLIconPlusElement;
+    };
+    interface HTMLIconXElement extends Components.IconX, HTMLStencilElement {
+    }
+    var HTMLIconXElement: {
+        prototype: HTMLIconXElement;
+        new (): HTMLIconXElement;
     };
     interface HTMLUiButtonElement extends Components.UiButton, HTMLStencilElement {
     }
@@ -53,7 +84,10 @@ declare global {
         new (): HTMLUiListItemElement;
     };
     interface HTMLElementTagNameMap {
+        "icon-bin": HTMLIconBinElement;
+        "icon-mark": HTMLIconMarkElement;
         "icon-plus": HTMLIconPlusElement;
+        "icon-x": HTMLIconXElement;
         "ui-button": HTMLUiButtonElement;
         "ui-checkbox": HTMLUiCheckboxElement;
         "ui-input": HTMLUiInputElement;
@@ -61,14 +95,24 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface IconBin {
+    }
+    interface IconMark {
+    }
     interface IconPlus {
     }
+    interface IconX {
+    }
     interface UiButton {
+        "link"?: boolean;
         "onButton-clicked"?: (event: CustomEvent<any>) => void;
+        "toLeft"?: boolean;
         "type"?: "button" | "submit" | "reset";
+        "wide"?: boolean;
     }
     interface UiCheckbox {
         "checked"?: boolean;
+        "disabled"?: boolean;
         "onCheckbox-change"?: (event: CustomEvent<any>) => void;
     }
     interface UiInput {
@@ -78,9 +122,18 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface UiListItem {
+        "done"?: boolean;
+        "last"?: boolean;
+        "name"?: string;
+        "onList-item-change-name"?: (event: CustomEvent<any>) => void;
+        "onList-item-delete"?: (event: CustomEvent<any>) => void;
+        "onList-item-done"?: (event: CustomEvent<any>) => void;
     }
     interface IntrinsicElements {
+        "icon-bin": IconBin;
+        "icon-mark": IconMark;
         "icon-plus": IconPlus;
+        "icon-x": IconX;
         "ui-button": UiButton;
         "ui-checkbox": UiCheckbox;
         "ui-input": UiInput;
@@ -91,7 +144,10 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "icon-bin": LocalJSX.IconBin & JSXBase.HTMLAttributes<HTMLIconBinElement>;
+            "icon-mark": LocalJSX.IconMark & JSXBase.HTMLAttributes<HTMLIconMarkElement>;
             "icon-plus": LocalJSX.IconPlus & JSXBase.HTMLAttributes<HTMLIconPlusElement>;
+            "icon-x": LocalJSX.IconX & JSXBase.HTMLAttributes<HTMLIconXElement>;
             "ui-button": LocalJSX.UiButton & JSXBase.HTMLAttributes<HTMLUiButtonElement>;
             "ui-checkbox": LocalJSX.UiCheckbox & JSXBase.HTMLAttributes<HTMLUiCheckboxElement>;
             "ui-input": LocalJSX.UiInput & JSXBase.HTMLAttributes<HTMLUiInputElement>;
