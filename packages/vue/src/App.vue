@@ -8,9 +8,11 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import HelloWorld from './components/HelloWorld.vue';
+import TodoList from './components/TodoList.vue';
 
 @Component({
   components: {
+    TodoList,
     HelloWorld,
   },
 })

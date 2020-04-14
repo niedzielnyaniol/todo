@@ -20,6 +20,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-empty-function': 'off',
     '@typescript-eslint/explicit-function-return-type': ['error'],
+    '@typescript-eslint/explicit-function-return-type': 'off',
     'react/prop-types': 'off',
     'react/jsx-filename-extension': [1, { 'extensions': ['.tsx'] }],
     'react/jsx-one-expression-per-line': 'off',
