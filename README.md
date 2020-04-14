@@ -31,5 +31,11 @@ cd todo
 ### Install dependencies
 
 ```sh
+yarn install
+```
+
+and then
+
+```sh
 lerna bootstrap
 ```

@@ -22,12 +22,12 @@
     "packages/**/*"
   ],
   "scripts": {
-    "test": "test",
-    "lint": "eslint ./packages/ --ext .js,.jsx,.ts,.tsx",
+    "bootstrap": "lerna bootstrap",
     "lint:fix": "yarn lint --fix",
-    "stencil:start": "lerna run --parallel --scope=@todo/design-system start",
-    "stencil:storybook": "lerna run --parallel --scope=@todo/design-system storybook",
-    "react:start": "lerna run --scope=@todo/react start"
+    "lint": "eslint ./packages/ --ext .js,.jsx,.ts,.tsx",
+    "react:start": "lerna run --parallel --scope=@todo/react start",
+    "server:start": "lerna run --parallel --scope=@todo/server start",
+    "test": "test"
   },
   "repository": {
     "type": "git",

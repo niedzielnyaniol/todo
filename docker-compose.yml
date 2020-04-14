@@ -1,0 +1,41 @@
+version: "3"
+services:
+    server:
+        build: .
+        container_name: "todo-server"
+        volumes:
+            - ./:/app/packages/server
+        ports:
+            - "3001:3001"
+        env_file:
+            - ./packages/server/.env
+        links:
+            - database
+        command: ['yarn', 'server:start']
+
+    client:
+        build: .
+        container_name: "todo-client"
+        volumes:
+            - ./:/app/packages/react
+        ports:
+            - "3000:3000"
+        env_file:
+            - ./packages/react/.env
+        links:
+            - database
+        command: ['yarn', 'react:start']
+
+    database:
+        image: "mysql:5.7.24"
+        container_name: "todo-database"
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: "admin"
+            MYSQL_USER: "test"
+            MYSQL_PASSWORD: "test"
+            MYSQL_DATABASE: "test"
+    
+volumes:
+    database-data: {}
