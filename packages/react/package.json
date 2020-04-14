@@ -23,18 +23,6 @@
     "storybook": "start-storybook -p 6005",
     "build-storybook": "build-storybook"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@storybook/addon-actions": "^5.3.18",
@@ -42,5 +30,15 @@
     "@storybook/addons": "^5.3.18",
     "@storybook/react": "^5.3.18",
     "babel-loader": "^8.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niedzielnyaniol/todo.git"
+  },
+  "author": "niedzielnyaniol",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/niedzielnyaniol/todo/issues"
+  },
+  "homepage": "https://github.com/niedzielnyaniol/todo#readme"
 }

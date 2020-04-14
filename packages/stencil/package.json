@@ -35,6 +35,15 @@
     "copy-webpack-plugin": "5.1.1",
     "write-file-webpack-plugin": "4.5.1"
   },
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niedzielnyaniol/todo.git"
+  },
+  "author": "niedzielnyaniol",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/niedzielnyaniol/todo/issues"
+  },
+  "homepage": "https://github.com/niedzielnyaniol/todo#readme",
   "dependencies": {}
 }

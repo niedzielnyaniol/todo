@@ -23,5 +23,15 @@
     "eslint-plugin-vue": "6.2.2",
     "typescript": "~3.8.3",
     "vue-template-compiler": "^2.6.11"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niedzielnyaniol/todo.git"
+  },
+  "author": "niedzielnyaniol",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/niedzielnyaniol/todo/issues"
+  },
+  "homepage": "https://github.com/niedzielnyaniol/todo#readme"
 }
