@@ -1,20 +1,47 @@
-/* eslint-disable no-console */
-import 'reflect-metadata';
-import { createConnection } from 'typeorm';
-import { User } from './entity/User';
+import * as express from "express";
+import {Request, Response} from "express";
+import * as bodyParser from  "body-parser";
+import {createConnection} from "typeorm";
+import {User} from "./entity/User";
 
-createConnection().then(async (connection) => {
-  console.log('Inserting a new user into the database...');
-  const user = new User();
-  user.firstName = 'Timber';
-  user.lastName = 'Saw';
-  user.age = 25;
-  await connection.manager.save(user);
-  console.log(`Saved a new user with id: ${user.id}`);
+// create typeorm connection
+createConnection().then(connection => {
+    const userRepository = connection.getRepository(User);
 
-  console.log('Loading users from the database...');
-  const users = await connection.manager.find(User);
-  console.log('Loaded users: ', users);
+    // create and setup express app
+    const app = express();
+    app.use(bodyParser.json());
 
-  console.log('Here you can setup and run express/koa/any other framework.');
-}).catch((error) => console.log(error));
+    // register routes
+
+    app.get("/users", async function(req: Request, res: Response) {
+        const users = await userRepository.find();
+        res.json(users);
+    });
+
+    app.get("/users/:id", async function(req: Request, res: Response) {
+        const results = await userRepository.findOne(req.params.id);
+        return res.send(results);
+    });
+
+    app.post("/users", async function(req: Request, res: Response) {
+        const user = await userRepository.create(req.body);
+        const results = await userRepository.save(user);
+        return res.send(results);
+    });
+
+    app.put("/users/:id", async function(req: Request, res: Response) {
+        const user = await userRepository.findOne(req.params.id);
+        userRepository.merge(user, req.body);
+        const results = await userRepository.save(user);
+        return res.send(results);
+    });
+
+    app.delete("/users/:id", async function(req: Request, res: Response) {
+        const results = await userRepository.delete(req.params.id);
+        return res.send(results);
+    });
+
+    // start express server
+    app.listen(3000);
+});
