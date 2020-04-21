@@ -1,14 +1,17 @@
 # Simple TODO App
 
-This project is lerna-monorepo.  
-[💅Stencil app](./packages/stencil/README.md) used as design-system component library.  
-[⚛️React app]('./packages/react/README.md) or [✌️Vue.js app]('./packages/vue/README.md) as client side
+## Table of concerns
+
+1. [Requirements](#requirements)
+2. [Installation](#installation)
+3. [Run](#run)
 
 ## Requirements
 
 - node v11.15.0
 - yarn v1.22.4
 - lerna v3.20.2
+- docker
 
 ## Installation
 
@@ -38,4 +41,26 @@ and then
 
 ```sh
 lerna bootstrap
+```
+
+## Run
+
+### Run docker containers
+
+```sh
+docker-compose up -d
+```
+
+### Run server
+
+```sh
+cd packages/server
+yarn start
+```
+
+### Run client app
+
+```sh
+cd packages/react
+yarn start
 ```
