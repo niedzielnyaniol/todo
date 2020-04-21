@@ -1,47 +1,24 @@
+import 'reflect-metadata';
 import * as express from 'express';
-import { Request, Response } from 'express';
-import * as bodyParser from 'body-parser';
 import { createConnection } from 'typeorm';
-import { User } from './entity/User';
+import { ApolloServer } from 'apollo-server-express';
 
-// create typeorm connection
-createConnection().then((connection) => {
-  const userRepository = connection.getRepository(User);
+import { typeDefs } from './typeDefs';
+import { resolvers } from './resolvers';
 
-  // create and setup express app
+const startServer = async (): Promise<void> => {
+  const server = new ApolloServer({ typeDefs, resolvers });
+
+  await createConnection();
+
   const app = express();
-  app.use(bodyParser.json());
 
-  // register routes
+  server.applyMiddleware({ app });
 
-  app.get('/users', async (req: Request, res: Response) => {
-    const users = await userRepository.find();
-    res.json(users);
+  app.listen({ port: 4000 }, () => {
+    // eslint-disable-next-line no-console
+    console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`);
   });
+};
 
-  app.get('/users/:id', async (req: Request, res: Response) => {
-    const results = await userRepository.findOne(req.params.id);
-    return res.send(results);
-  });
-
-  app.post('/users', async (req: Request, res: Response) => {
-    const user = await userRepository.create(req.body);
-    const results = await userRepository.save(user);
-    return res.send(results);
-  });
-
-  app.put('/users/:id', async (req: Request, res: Response) => {
-    const user = await userRepository.findOne(req.params.id);
-    userRepository.merge(user, req.body);
-    const results = await userRepository.save(user);
-    return res.send(results);
-  });
-
-  app.delete('/users/:id', async (req: Request, res: Response) => {
-    const results = await userRepository.delete(req.params.id);
-    return res.send(results);
-  });
-
-  // start express server
-  app.listen(3000);
-});
+startServer();
