@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { GraphQLScalarType } from 'graphql';
 import { Kind } from 'graphql/language';
 import { User } from './entity/User';
@@ -31,7 +32,7 @@ export const resolvers = {
       }
     },
 
-    addTask: async (_: any, args: any): Promise<boolean> => {
+    addTask: async (_: any, args: { name: string }): Promise<boolean> => {
       const { name } = args;
 
       try {
@@ -41,7 +42,6 @@ export const resolvers = {
 
         return true;
       } catch (error) {
-        console.log(error);
         return false;
       }
     },
@@ -50,13 +50,13 @@ export const resolvers = {
   Date: new GraphQLScalarType({
     name: 'Date',
     description: 'Date custom scalar type',
-    parseValue(value) {
+    parseValue(value): Date {
       return new Date(value); // value from the client
     },
-    serialize(value) {
+    serialize(value): Date {
       return value.getTime(); // value sent to the client
     },
-    parseLiteral(ast) {
+    parseLiteral(ast): Date {
       if (ast.kind === Kind.INT) {
         return new Date(+ast.value); // ast value is always in string format
       }
