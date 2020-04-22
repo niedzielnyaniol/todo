@@ -1,5 +1,6 @@
 type Props = {
-  onChange: (e: Event) => void;
+  onChange: (e: CustomEvent) => void;
+  onEnter?: (e: CustomEvent) => void;
   value?: string;
 }
 

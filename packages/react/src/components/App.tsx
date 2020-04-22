@@ -5,7 +5,7 @@ import '@todo/design-system/dist/stencil/stencil.css';
 function App(): JSX.Element {
   return (
     <div className="App">
-      <TodoList />
+      <TodoList data={[]} />
     </div>
   );
 }

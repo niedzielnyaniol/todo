@@ -2,22 +2,28 @@ import React, { useEffect } from 'react';
 
 import Props from './Input.types';
 
-const Input = ({ value = '', onChange }: Props): JSX.Element => {
+const Input = ({
+  onChange,
+  value = '',
+  onEnter = () => {},
+}: Props): JSX.Element => {
   useEffect(() => {
-    const input = document.querySelector('ds-input');
+    const input = document.querySelector('ui-input');
 
     if (input) {
-      input.addEventListener('changed', onChange);
+      input.addEventListener('input-changed', onChange as EventListener);
+      input.addEventListener('input-accept', onEnter as EventListener);
     }
 
     return (): void => {
       if (input) {
-        input.removeEventListener('changed', onChange);
+        input.removeEventListener('input-changed', onChange as EventListener);
+        input.removeEventListener('input-accept', onEnter as EventListener);
       }
     };
   });
 
-  return <ds-input value={value} />;
+  return <ui-input value={value} />;
 };
 
 export default Input;
