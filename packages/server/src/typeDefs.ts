@@ -2,12 +2,15 @@
 import { gql } from 'apollo-server-express';
 
 export const typeDefs = gql`
+  scalar Date
+
   type Query {
     user(id: Int!): User
   }
 
   type Mutation {
     addUser(firstName: String!, lastName: String, age: Int!): Boolean!
+    addTask(name: String!): Boolean!
   }
 
   type User {
@@ -15,5 +18,12 @@ export const typeDefs = gql`
     firstName: String!
     lastName: String!
     age: Int!
+  }
+
+  type Task {
+    id: Int!
+    name: Int!
+    created: Date!
+    done: Boolean!
   }
 `;
