@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {
+  ApolloClient, HttpLink, InMemoryCache, ApolloProvider,
+} from '@apollo/client';
 import { applyPolyfills, defineCustomElements } from '@todo/design-system/loader';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
@@ -14,9 +17,18 @@ declare global {
     }
 }
 
+const client = new ApolloClient({
+  cache: new InMemoryCache(),
+  link: new HttpLink({
+    uri: 'http://localhost:4000/graphql',
+  }),
+});
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
