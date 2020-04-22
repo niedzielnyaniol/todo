@@ -30,11 +30,12 @@ export class DSInput implements ComponentInterface {
 
   private handleChange = (e: Event): void => {
     this.value = (e.target as HTMLInputElement)?.value;
-    this.changed.emit(e);
+    this.changed.emit(this.value);
   }
 
   private handleAccept = (): void => {
     this.accept.emit(this.value);
+    this.el.blur();
   }
 
   @Listen('button-clicked')
