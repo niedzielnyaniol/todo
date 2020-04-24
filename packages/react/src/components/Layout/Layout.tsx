@@ -2,9 +2,11 @@ import React from 'react';
 import { Layout as AntdLayout, Breadcrumb } from 'antd';
 import Props from './Layout.types';
 import Sider from './components/Sider';
+import Content from '../atoms/Content';
+import { FOOTER_ANNOTATION } from '../../config';
 
 const {
-  Header, Footer, Content,
+  Header, Footer, Content: AntdContent,
 } = AntdLayout;
 
 const Layout = ({ children }: Props): JSX.Element => (
@@ -12,16 +14,16 @@ const Layout = ({ children }: Props): JSX.Element => (
     <Sider />
     <AntdLayout className="site-layout">
       <Header className="site-layout-background" style={{ padding: 0 }} />
-      <Content style={{ margin: '0 16px' }}>
+      <AntdContent style={{ margin: '0 16px' }}>
         <Breadcrumb style={{ margin: '16px 0' }}>
           <Breadcrumb.Item>User</Breadcrumb.Item>
           <Breadcrumb.Item>Bill</Breadcrumb.Item>
         </Breadcrumb>
-        <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
+        <Content>
           {children}
-        </div>
-      </Content>
-      <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+        </Content>
+      </AntdContent>
+      <Footer style={{ textAlign: 'center' }}>{FOOTER_ANNOTATION}</Footer>
     </AntdLayout>
   </AntdLayout>
 );

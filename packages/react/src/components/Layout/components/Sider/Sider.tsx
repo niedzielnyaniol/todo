@@ -7,19 +7,32 @@ import {
   TeamOutlined,
   UserOutlined,
 } from '@ant-design/icons';
+import { StyledLogo } from './Sider.styles';
+import { APP_NAME } from '../../../../config';
 
 const { SubMenu } = Menu;
 const {
   Sider: AntdSider,
 } = Layout;
 
-const Sider = () => {
-  const [collapsed, setCollapsed] = useState(false);
+const IS_COLLAPSED_KEY = '__is_collapsed';
+const defaultState = JSON.parse(localStorage.getItem(IS_COLLAPSED_KEY) || String(false));
 
-  const toggleCollapsed = () => setCollapsed((prevState) => !prevState);
+const Sider = () => {
+  const [collapsed, setCollapsed] = useState<boolean>(defaultState);
+
+  const toggleCollapsed = () => {
+    setCollapsed((prevState) => {
+      const value = !prevState;
+      localStorage.setItem(IS_COLLAPSED_KEY, JSON.stringify(value));
+
+      return value;
+    });
+  };
+
   return (
     <AntdSider collapsible collapsed={collapsed} onCollapse={toggleCollapsed}>
-      <div className="logo" />
+      <StyledLogo>{!collapsed && APP_NAME}</StyledLogo>
       <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
         <Menu.Item key="1">
           <PieChartOutlined />

@@ -3,7 +3,7 @@ import { Route, Redirect } from 'react-router-dom';
 import Props from './PrivateProps.types';
 import { config } from '../..';
 
-const { LOGIN_PATH } = config;
+const { LOGIN_PATH, AUTH_PATH } = config;
 
 const PrivateRoute = ({ children, ...props }: Props) => (
   <Route
@@ -13,7 +13,7 @@ const PrivateRoute = ({ children, ...props }: Props) => (
     ) : (
       <Redirect
         to={{
-          pathname: LOGIN_PATH,
+          pathname: AUTH_PATH + LOGIN_PATH,
           state: { from: location },
         }}
       />
