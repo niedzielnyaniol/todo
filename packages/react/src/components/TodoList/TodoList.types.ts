@@ -1,4 +1,4 @@
-import Task from '../../utils/types/Task';
+import Task from 'types/Task';
 
 type Props = {
     data: Task[];

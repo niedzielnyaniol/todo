@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
-import { config } from '../..';
-import FormLayout from '../../../components/FormLayout';
+import FormLayout from 'components/FormLayout/FormLayout';
+import { config } from 'routes';
 
 const { LOGIN_PATH } = config;
 

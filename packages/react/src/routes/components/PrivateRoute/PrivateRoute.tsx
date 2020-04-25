@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
+import { config } from 'routes';
 import Props from './PrivateProps.types';
-import { config } from '../..';
 
 const { LOGIN_PATH, AUTH_PATH } = config;
 

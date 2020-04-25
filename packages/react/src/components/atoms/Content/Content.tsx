@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import debounce from '../../../utils/debounce';
+import debounce from 'utils/debounce';
 import Props from './Content.types';
 import { StyledContent } from './Content.styles';
 

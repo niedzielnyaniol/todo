@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { gql, useMutation } from '@apollo/client';
-import Input from '../../components/atoms/Input';
+import Input from 'components/atoms/Input';
 
 const ADD_TASK = gql`
     mutation addTask($name: String!) {

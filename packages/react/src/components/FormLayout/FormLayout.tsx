@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout } from 'antd';
-import Content from '../atoms/Content';
-import { FOOTER_ANNOTATION } from '../../config';
+import Content from 'components/atoms/Content';
+import { FOOTER_ANNOTATION } from 'config';
 
 import Props from './FormLayout.types';
 

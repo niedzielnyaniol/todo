@@ -40,7 +40,15 @@ module.exports = {
     ],
     'import/no-unresolved': [
       'error',
-      { 'ignore': ['^react$', '^styled-components$'] }
+      { 'ignore': [
+          '^components*',
+          '^containers*',
+          '^config*',
+          '^routes*',
+          '^utils*',
+          '^types*',
+        ]
+      }
     ]
-  }
+  },
 };

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Switch } from 'react-router-dom';
-import { config } from '../..';
-import PrivateRoute from '../PrivateRoute';
-import Layout from '../../../components/Layout';
+import { config } from 'routes';
+import PrivateRoute from 'routes/components/PrivateRoute';
+import Layout from 'components/Layout';
 
 const { INDEX_PATH } = config;
 

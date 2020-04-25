@@ -7,8 +7,8 @@ import {
   TeamOutlined,
   UserOutlined,
 } from '@ant-design/icons';
+import { APP_NAME } from 'config';
 import { StyledLogo } from './Sider.styles';
-import { APP_NAME } from '../../../../config';
 
 const { SubMenu } = Menu;
 const {

@@ -1,6 +1,6 @@
 import React from 'react';
 import TodoList from './';
-import Task from '../../utils/types/Task';
+import Task from 'types/Task';
 
 const data = [
   new Task(1, 'task1', false),

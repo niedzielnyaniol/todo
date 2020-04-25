@@ -1,9 +1,9 @@
 import React from 'react';
 import { Layout as AntdLayout, Breadcrumb } from 'antd';
+import Content from 'components/atoms/Content';
+import { FOOTER_ANNOTATION } from 'config';
 import Props from './Layout.types';
 import Sider from './components/Sider';
-import Content from '../atoms/Content';
-import { FOOTER_ANNOTATION } from '../../config';
 
 const {
   Header, Footer, Content: AntdContent,
