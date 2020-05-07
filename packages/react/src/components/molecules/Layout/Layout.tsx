@@ -12,8 +12,8 @@ const {
 const Layout = ({ children }: Props): JSX.Element => (
   <AntdLayout style={{ minHeight: '100vh' }}>
     <Sider />
-    <AntdLayout className="site-layout">
-      <Header className="site-layout-background" style={{ padding: 0 }} />
+    <AntdLayout>
+      <Header style={{ padding: 0 }} />
       <AntdContent style={{ margin: '0 16px' }}>
         <Breadcrumb style={{ margin: '16px 0' }}>
           <Breadcrumb.Item>User</Breadcrumb.Item>

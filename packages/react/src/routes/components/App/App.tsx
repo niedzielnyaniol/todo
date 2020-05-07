@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch } from 'react-router-dom';
 import { config } from 'routes';
 import PrivateRoute from 'routes/components/PrivateRoute';
-import Layout from 'components/Layout';
+import Layout from 'components/molecules/Layout';
 
 const { INDEX_PATH } = config;
 
